@@ -9,6 +9,8 @@ router.get('/', (req, res) => {
 router.post('/data', async (req, res) => {
     const data = new Data(req.body)
 
+    console.log(data);
+
     try {
         await data.save()
 
@@ -43,7 +45,7 @@ router.delete('/data/:id', async (req, res) => {
     try {
         const dataByID = await Data.findById(_id)
 
-        if (!dataById) {
+        if (!dataByID) {
             res.status(400).send()
         }
 

@@ -13,8 +13,10 @@ router.post('/data', async (req, res) => {
         await data.save()
 
         res.status(201).send(data)
+        console.log(data);
     } catch (error) {
         res.status(400).send(error)
+        console.log(error);
     }
 
 })

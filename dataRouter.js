@@ -6,19 +6,14 @@ router.get('/', (req, res) => {
     res.send('Hello World')
 })
 
-router.post('/data', async (req, res) => {
+router.post('/data',  async (req, res) => {
     const data = new Data(req.body)
-
-    console.log(data);
-
+    
     try {
         await data.save()
-
         res.status(201).send(data)
-        console.log(data);
     } catch (error) {
         res.status(400).send(error)
-        console.log(error);
     }
 
 })

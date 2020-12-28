@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
-// const dataSchema = new Schema({
-    
-// })
-
-const Data = mongoose.model('Data', new mongoose.Schema({
+const dataSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -13,6 +9,8 @@ const Data = mongoose.model('Data', new mongoose.Schema({
     age: {
         type: Number
     }
-}))
+})
+
+const Data = mongoose.model('Data', dataSchema)
 
 module.exports = Data
